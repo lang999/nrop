@@ -28,11 +28,11 @@ const data = {
 
     let resp = await http.get('https://www.zhaiclub.com/video.php?viewkey='+viewkey , {fake:true})
 
-    let url = (resp.match(/source\s*src\s*=\s*"([^"]+)/) || ['',''])[1]
+    let url = (resp.match(/source\s*src\s*=\s*([^ ]+)/) || ['',''])[1]
 
     let thumb = (resp.match(/poster\s*=\s*"([^"]+)/) || ['',''])[1]
 
-    let title =(resp.match(/viewvideo-title">([^<]+)/) || ['',''])[1].replace(/[\r\n\s]/g,'')  
+    let title =(resp.match(/demo-desc">([^<]+)/) || ['',''])[1].replace(/[\r\n\s]/g,'')  
 
     let source = [{
       title :'默认',
