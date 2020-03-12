@@ -9,7 +9,7 @@ const data = {
   async list(page , cate){
     let resp = await http.get(host+'v.php?page='+page+'&category='+cate)
     let data = []
-    resp.replace(/viewkey=([0-9a-z]+)[^<]+?\s*<img\s+src="([^"]+?)"[\w\W]+?title="([^"]+?)"/g , ($0 , $1, $2, $3)=>{
+    resp.replace(/VID=([0-9a-zA-Z]+)[^<]+?\s*<img\s+src="([^"]+?)"[\w\W]+?title="([^"]+?)"/g , ($0 , $1, $2, $3)=>{
       data.push({
         viewkey : $1 , 
         thumb : $2.replace(/http:/,'https:') ,
