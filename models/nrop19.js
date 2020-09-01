@@ -26,7 +26,7 @@ const data = {
       return cache(viewkey)
     }
 
-    let resp = await http.get('http://91porn.com/view_video.php?viewkey='+viewkey , {fake:true})
+    let resp = await http.get('https://91porny.com/video/embed/'+viewkey , {fake:true})
 
     let url = (resp.match(/source\s*src\s*=\s*([^ ]+)/) || ['',''])[1]
 
